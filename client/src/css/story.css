@@ -1,0 +1,86 @@
+.story {
+  width: 200px;
+  position: relative;
+  margin: 20px;
+  border-radius: 12px;
+
+}
+
+.story img {
+  width: 220px;
+  height: 250px;
+  border-radius: 12px;
+
+
+}
+
+.story div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+}
+
+.story div img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.story h4 {
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.stories {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  gap: 10px;
+  top: 0;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.sliderBtns {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  bottom: 55%;
+  z-index: 7;
+
+}
+
+.sliderBtns .incressBtn {
+  background-color: var(--sacndry-color);
+  position: absolute;
+  left: -40px;
+  z-index: 10;
+}
+
+.sliderBtns .decresBtn {
+  position: absolute;
+  background-color: var(--sacndry-color);
+  right: -40px;
+}
+.stories::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #f5f5f500;
+}
+
+
+
+.storiesT {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 70%;
+  display: -webkit-flex;
+  position: -webkit-sticky;
+  top: 0;
+  position: relative;
+}

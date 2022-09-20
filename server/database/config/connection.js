@@ -7,14 +7,14 @@ let connectionString = "";
 let ssl = false;
 console.log(NODE_ENV);
 switch (NODE_ENV) {
-  case "production":
+  case "development":
     connectionString = DATABASE_URL;
     ssl = {
       rejectUnauthorized: false,
     };
     break;
-  case "development":
-    connectionString = DEV_DB_URL;
+  case "production":
+    connectionString = DATABASE_URL;
     break;
 
   case "test":
