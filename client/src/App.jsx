@@ -1,24 +1,27 @@
 import React from 'react'
-import { useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 
 import Storage from './components/Storage'
-import axios from 'axios'
+import SignUp from './components/SignUp'
+import Header from './components/Header'
+import Storeis from './components/Storeis'
+import SliderBtns from './components/SliderBtns'
 
 function App() {
-
-  useEffect(()=>{
-    axios('/user').then(res=>console.log(res.data))
-  },[])
-
-
   return <div className="App">
     <Storage>
+      <Header/>
     <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/signUp" element={<SignUp/>} />
     </Routes>
-<h1>hallo world</h1>
+    <main>
+      <section className='storiesT'>
+        <SliderBtns/>
+      <Storeis/>
+      </section>
+
+    </main>
     </Storage>
   </div>
 }

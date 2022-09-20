@@ -1,0 +1,106 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+  border-bottom: 1px solid var(--sacndry-color);
+  background-color: var(--main-color);
+}
+
+.logo {
+  width: 3vw;
+}
+
+.userBox img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 5px;
+
+}
+
+.userBox figure {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.userBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.karmaIcon {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo p {
+  font-size: 70%;
+  color: var(--sacndry-color);
+}
+
+.userInfo svg {
+  font-size: 70%;
+  color: var(--sacndry-color);
+
+}
+
+.iconsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.addDropDown {
+  position: absolute;
+  top: 20px;
+  z-index: 0;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  opacity: 0;
+  transition: 0.2s linear all;
+}
+
+.addPost {
+  position: relative;
+}
+
+.addPost:hover .addDropDown {
+  color: brown;
+  height:auto;
+  opacity: 1;
+  z-index: 10;
+  top: 37px;
+
+}
+
+.addDropDown li {
+  padding: 5px;
+  display: inline-block;
+  border-bottom: 1px solid var(--sacndry-color);
+  font-size: 15px !important;
+  width: 80px;
+  color: var(--negative-color);
+}
+.addDropDown li:hover{
+  background-color: var(--sacndry-color);
+  color: var(--main-color);
+}
+
+.inputSearch {
+  width: 33%;
+  outline: none;
+}
+.signsBtn a{
+  text-decoration: none;
+  background-color: var(--orange-color);
+  padding:10px 10px;
+  color: var(--main-color);
+  margin: 5px;
+  border-radius: 12px;
+}
