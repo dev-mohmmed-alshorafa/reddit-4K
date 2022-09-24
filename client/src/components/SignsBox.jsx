@@ -2,7 +2,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 
 function SignsBox() {
-
   return (
     <section className='signsBtn'>
     <NavLink to='/signUp'>

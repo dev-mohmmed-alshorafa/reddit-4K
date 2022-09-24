@@ -15,19 +15,25 @@ function Storage(props) {
 const [signUp,setSignUp]=useState(initSignUp)
 const [isUser,setIsUser]=useState('')
 const [moveSlider,setMoveSlider]=useState(0)
-
+const [stories,setStories]=useState([])
+const [storyIndex,setStoryIndex]=useState(null)
 
 useEffect(()=>{
-  Axios('/api/user').then(data=>setIsUser(data.data)).then(data=>console.log(isUser))
+  Axios('/api/user').then(data=>setIsUser(data.data))
+  Axios('/api/stories').then(data=>{
+    setStories(data.data)})
+  
 },[])
 
 const signUpFun=(e)=>{
   e.preventDefault()
-  Axios.post('/api/signup',signUp).then(isExist=>{
+  const newData= new FormData()
+  newData.append('file',signUp)
+  Axios.post('/api/signup',newData).then(isExist=>{
     if(isExist.data.msg){
       console.log(isExist.data);
     }else{
-      window.location.href='/home'
+      // window.location.href='/home'
     }
   })
   setSignUp(initSignUp)
@@ -37,7 +43,10 @@ const signUpFun=(e)=>{
 
   return (
     <div>
-      <Store.Provider value={{signUp,setSignUp,isUser,signUpFun,moveSlider,setMoveSlider}}>
+      <Store.Provider  value={{signUp,setSignUp,isUser,signUpFun,
+        moveSlider,setMoveSlider
+        ,stories,setStories,storyIndex,setStoryIndex
+        }}>
       {props.children}
       </Store.Provider>
       

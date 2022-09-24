@@ -5,6 +5,11 @@ require('dotenv').config()
 const cookieParser = require('cookie-parser');
 const router=require('./router')
 const {auth}=require('./middleware/jwt')
+const bodyParser = require('body-parser');
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 const port =process.env.PORT||5000
 app.set('port', port);
 app.disable("x-powered-by");
@@ -22,6 +27,7 @@ app.use('/api/user',(req,res,next)=>{
   }
   next()
 })
+
 
 app.use(router)
 

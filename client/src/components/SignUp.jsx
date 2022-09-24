@@ -6,6 +6,7 @@ function SignUp() {
   const {signUp,setSignUp,signUpFun}=useContext(Store)
 
 
+
   return (
     <div className="signup">
     <form onSubmit={signUpFun}>
@@ -30,7 +31,7 @@ function SignUp() {
 </div>
 
 <div className="user-box">
-  <input className="img" type="password" value={signUp.img} onChange={e=>setSignUp({...signUp,img:e.target.value})}  title="Enter password" required/>
+  <input className="img" type="file"  value={signUp.img} onChange={e=>setSignUp({...signUp,img:e.target.value})}  title="Enter password" required/>
   <label>Image</label>
 </div>
       

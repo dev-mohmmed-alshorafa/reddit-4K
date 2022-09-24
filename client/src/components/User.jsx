@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { Store } from './Storage'
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import SignOut from './SignOut';
 
 function User() {
   const {isUser}=useContext(Store)
@@ -18,7 +19,11 @@ function User() {
           </div>
       </div>
       </figure>
-     <KeyboardArrowDownOutlinedIcon/>
+      <button className='dropDownOptions'>
+      <KeyboardArrowDownOutlinedIcon />
+      <SignOut/>
+
+      </button>
     </section>
   )
 }

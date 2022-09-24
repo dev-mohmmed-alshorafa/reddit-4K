@@ -57,7 +57,7 @@
   background-color: var(--sacndry-color);
   position: absolute;
   left: -40px;
-  z-index: 10;
+  height: 40px !important;
 }
 
 .sliderBtns .decresBtn {
@@ -65,10 +65,10 @@
   background-color: var(--sacndry-color);
   right: -40px;
 }
-.stories::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #f5f5f500;
+
+.stories::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f500;
 }
 
 
@@ -83,4 +83,61 @@
   position: -webkit-sticky;
   top: 0;
   position: relative;
+  background: #dbd6d6;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+.newStory {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30%;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  z-index: 10;
+  border-radius: 12px;
+  background-color: var(--sacndry-color);
+}
+
+.newStory input {
+  display: none;
+}
+
+.newStory label {
+  font-size: 50px;
+  font-weight: 900;
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  padding: 20px 35px;
+
+  text-align: center;
+}
+
+.sliderStories {
+  position: fixed;
+  width: 50vw;
+  height: 70vh;
+  top: 100px;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+
+}
+.sliderStories button{
+  background-color: var(--sacndry-color);
+}
+
+.sliderStories img {
+  width: 40vw;
+  height: 70vh;
+  border-radius: 20px;
 }
