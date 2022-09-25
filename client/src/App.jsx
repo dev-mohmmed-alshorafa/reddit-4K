@@ -10,19 +10,19 @@ import SliderBtns from './components/SliderBtns'
 import NewStory from './components/NewStory'
 
 function App() {
-  const [newStoryIsClicked,setNewStoryIsClicked]=useState(true)
+  const [newStoryIsClicked,setNewStoryIsClicked]=useState(false)
 
 
   return <div  className="App">
     <Storage>
       <Header newStoryIsClicked={newStoryIsClicked}setNewStoryIsClicked={setNewStoryIsClicked}/>
-    <Routes>
+    {/* <Routes>
             <Route path="/signUp" element={<SignUp/>} />
-    </Routes>
+    </Routes> */}
     <main>
       <section className='storiesT'>
         <SliderBtns   />
-      {/* { newStoryIsClicked && <NewStory newStoryIsClicked={newStoryIsClicked}setNewStoryIsClicked={setNewStoryIsClicked}/>} */}
+      { newStoryIsClicked && <NewStory newStoryIsClicked={newStoryIsClicked}setNewStoryIsClicked={setNewStoryIsClicked}/>}
       <Storeis />
       </section>
     </main>

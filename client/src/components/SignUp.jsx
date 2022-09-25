@@ -1,16 +1,20 @@
 import React from 'react'
 import { useContext } from 'react'
 import {Store} from './Storage'
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
-function SignUp() {
-  const {signUp,setSignUp,signUpFun}=useContext(Store)
+
+function SignUp({showLoginFun}) {
+  const {signUp,setSignUp,signUpFun,updateImgUser,setUpdateImgUser}=useContext(Store)
 
 
 
   return (
     <div className="signup">
     <form onSubmit={signUpFun}>
-      <label htmlFor="chk" className="sig">Sign up</label>
+      <label onClick={()=>{
+        showLoginFun('-142px')
+      }} htmlFor="chk" className="sig">Sign up</label>
     
 <div className="user-box">
   <input className="name" type="text" value={signUp.username} onChange={e=>setSignUp({...signUp,username:e.target.value})}  title="Enter Username" required/>
@@ -31,11 +35,11 @@ function SignUp() {
 </div>
 
 <div className="user-box">
-  <input className="img" type="file"  value={signUp.img} onChange={e=>setSignUp({...signUp,img:e.target.value})}  title="Enter password" required/>
-  <label>Image</label>
+  <input className="userImg" type="file" id='userImg'   onChange={e=>setUpdateImgUser(e.target.files[0])}  required/>
+  <label htmlFor='userImg' className='labelUserImg'><AddCircleOutlineOutlinedIcon/>Image</label>
 </div>
       
-      <button className="sign-up btn-grad" >Sign up</button>
+      <button className="signBtn" >Sign up</button>
     </form>
   </div>
       

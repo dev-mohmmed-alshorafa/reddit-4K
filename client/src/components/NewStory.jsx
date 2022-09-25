@@ -9,6 +9,7 @@ function NewStory({setCheckStory}) {
     const newData= new FormData()
 
     newData.append('file',updateStory)
+    console.log(updateStory);
      axios.post('/api/upload',newData).then(story=>{
       setStories([...stories,story.data])})
       setCheckStory(false)

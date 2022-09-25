@@ -9,7 +9,6 @@ function Storage(props) {
   const initSignUp={
     username:'',
     email:'',
-    img:'',
     password:''
   }
 const [signUp,setSignUp]=useState(initSignUp)
@@ -17,6 +16,7 @@ const [isUser,setIsUser]=useState('')
 const [moveSlider,setMoveSlider]=useState(0)
 const [stories,setStories]=useState([])
 const [storyIndex,setStoryIndex]=useState(null)
+const [updateImgUser,setUpdateImgUser]=useState('')
 
 useEffect(()=>{
   Axios('/api/user').then(data=>setIsUser(data.data))
@@ -28,12 +28,19 @@ useEffect(()=>{
 const signUpFun=(e)=>{
   e.preventDefault()
   const newData= new FormData()
-  newData.append('file',signUp)
-  Axios.post('/api/signup',newData).then(isExist=>{
+  newData.append('file',updateImgUser)
+  newData.append('data',JSON.stringify(signUp))
+
+  Axios(  {
+    method: "post",
+    url: "/api/signup",
+    data: newData,
+    headers: { "Content-Type": "multipart/form-data" },
+  }).then(isExist=>{
     if(isExist.data.msg){
       console.log(isExist.data);
     }else{
-      // window.location.href='/home'
+      window.location.href='/home'
     }
   })
   setSignUp(initSignUp)
@@ -45,7 +52,7 @@ const signUpFun=(e)=>{
     <div>
       <Store.Provider  value={{signUp,setSignUp,isUser,signUpFun,
         moveSlider,setMoveSlider
-        ,stories,setStories,storyIndex,setStoryIndex
+        ,stories,setStories,storyIndex,setStoryIndex,updateImgUser,setUpdateImgUser
         }}>
       {props.children}
       </Store.Provider>

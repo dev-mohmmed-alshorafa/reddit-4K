@@ -3,14 +3,13 @@ const { join } = require("path");
 const fs = require("fs");
 require("dotenv").config();
 
+
 const cloudUpload = (req, res, next) => {
    // after handled file using multer, we take the name
-   if(req.user){
 
-   
+
    let imgName;
    if (req.file) {
-    
      imgName = req.file.filename;
      cloudinary.config({
        cloud_name: process.env.CLOUD_NAME,
@@ -27,7 +26,7 @@ const cloudUpload = (req, res, next) => {
      next();
    }
   }
- };
+ 
 
 
 module.exports = cloudUpload;

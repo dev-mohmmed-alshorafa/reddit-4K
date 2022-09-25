@@ -1,0 +1,173 @@
+.main {
+  position: absolute;
+  width: 350px;
+  background-color: #161624;
+  height: 90vh;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+  opacity: 1;
+  transition: 0.5s linear;
+  right: 37%;
+  margin: auto;
+  z-index: 10;
+}
+
+.showForm {
+  opacity: 1 !important;
+  bottom: -80px;
+  position: fixed !important;
+  animation: show 0.5s linear;
+}
+
+.hiddenForm {
+  bottom: -100%;
+  opacity: 0;
+  transition: 0.5s linear;
+  z-index: -10;
+}
+
+#chk {
+  display: none;
+}
+
+.sig {
+  margin: 15px !important;
+}
+
+.signup {
+  position: relative;
+  width: 100%;
+  height: 93%;
+}
+
+.user-box {
+  position: relative;
+  width: 60%;
+  margin: 0px auto;
+}
+
+.btn-grad {
+  margin: 10px auto;
+  background-image: linear-gradient(to right, #000000 0%, #53346D 51%, #000000 100%);
+
+
+  cursor: pointer;
+}
+
+
+
+.login {
+  height: 470px;
+  background: #eee;
+  border-radius: 60% / 10%;
+  transform: translateY(-180px);
+  transition: .8s ease-in-out;
+}
+
+#chk:checked~.login {
+  transform: translateY(-620px);
+}
+
+#chk:checked~.login label {
+  transform: scale(1);
+}
+
+#chk:checked~.signup .sig {
+  transform: scale(.6);
+  margin-top: 10px;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.user-box input {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.user-box input:focus~label,
+.user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #f2363c;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+label[for="chk"] {
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.sig {
+  color: #fff;
+  margin: 40px;
+}
+
+.log {
+  margin: 80px;
+}
+
+.login label,
+.login input {
+  color: #573b8a;
+}
+
+.login input {
+  border-color: #573b8a;
+}
+
+.userImg {
+  opacity: 0;
+  position: absolute;
+}
+
+.labelUserImg {
+  background-color: var(--orange-color);
+  padding: 5px 10px;
+  display: flex;
+  width: 94%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+
+.signBtn {
+  background-image: linear-gradient(to right, #000000 0%, #53346D 51%, #000000 100%);
+  margin: 10vh auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: block;
+}
+
+.signBtn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
