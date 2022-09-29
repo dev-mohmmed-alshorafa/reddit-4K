@@ -21,12 +21,31 @@ function SliderStories() {
 
     }
   }
+  useEffect(()=>{
+    if(showStory<stories.length-1){
+     var a= setTimeout(()=>{
+          console.log(showStory);
+          setShowStory(showStory+1) 
+      }
+  ,5000)
+    }else{
+
+      clearTimeout(a)
+      setTimeout(()=>{
+        console.log(showStory);
+        setStoryIndex(null)
+      }
+,5000)
+      console.log('clear');
+    }
+    
+  },[showStory])
   return (
     <div className='sliderStories'>
-          <IconButton onClick={toNext}><ArrowBackIosIcon/></IconButton>
+      <div className='showImgStory'>
+      <img  src={stories[showStory].storyimg||''} alt="" />
 
-      <img src={stories[showStory].storyimg} alt="" />
-      <IconButton onClick={toPrev}><ArrowForwardIosIcon/></IconButton>
+      </div>
 
     </div>
   )
