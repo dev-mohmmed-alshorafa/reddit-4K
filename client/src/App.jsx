@@ -9,10 +9,10 @@ import SliderBtns from './components/stories/SliderBtns'
 import NewStory from './components/stories/NewStory'
 import HandelPosts from './components/posts/HandelPosts'
 
-
 function App() {
 
   const [newStoryIsClicked,setNewStoryIsClicked]=useState(false)
+
 
   return <div  className="App">
     <Storage>

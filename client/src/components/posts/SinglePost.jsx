@@ -3,15 +3,25 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import IconButton from '@mui/material/IconButton';
 import { useState } from 'react';
 import  Axios  from 'axios'
+import io from "socket.io-client";
+const socket=io.connect('http://localhost:5000')
 
 
 function SinglePost({post}) {
   const [isLike,setIsLike]=useState(false)
 
 
+
 const handelLike=()=>{
   setIsLike(!isLike)
+  socket.emit('like',{like:!isLike,id:post.id});
+
 } 
+socket.on('like', function(msg) {
+  if(msg.id===post.id){
+    setIsLike(msg.like)
+  }
+ });
 
 
   return (
