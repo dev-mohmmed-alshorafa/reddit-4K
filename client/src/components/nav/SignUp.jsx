@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import {Store} from './Storage'
+import {Store} from '../Storage'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
 

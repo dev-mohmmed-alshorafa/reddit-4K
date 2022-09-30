@@ -6,8 +6,6 @@ require("dotenv").config();
 
 const cloudUpload = (req, res, next) => {
    // after handled file using multer, we take the name
-
-
    let imgName;
    if (req.file) {
      imgName = req.file.filename;

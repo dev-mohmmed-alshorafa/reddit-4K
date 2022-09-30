@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext,useRef } from 'react'
 import {useState} from 'react'
-import { Store } from './Storage'
+import { Store } from '../Storage'
 function NewStory({setCheckStory}) {
   const {stories,setStories}=useContext(Store)
   const [updateStory,setUpdateStory]=useState('')

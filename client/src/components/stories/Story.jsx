@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import SliderStories from './SliderStories'
-import { Store } from './Storage'
+import { Store } from '../Storage'
 
 function Story({story,handleClick,index}) {
   const {stories,setStories,setStoryIndex}=useContext(Store)

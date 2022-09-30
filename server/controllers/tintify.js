@@ -6,7 +6,9 @@ const fs = require("fs");
 tinify.key = process.env.TINIFY_KEY;
 
 const reduceSize = (req, res, next) => {
-  const imgName = req.file.filename;
+  if(req.file){
+
+    const imgName = req.file.filename;
   //? to create the uploads folder if not exist
   const imgDir = join(
     __dirname, '..', 'uploads'
@@ -25,6 +27,10 @@ const reduceSize = (req, res, next) => {
     .catch((err) => {
       res.status(500).json({ msg: "Connection Error,Could not compress img." });
     });
+  }else{
+    next()
+  }
+ 
 };
 
 module.exports = reduceSize;

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {NavLink} from 'react-router-dom'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-import '../css/Forms.css'
+import '../../css/Forms.css'
 function SignsBox() {
   const [showLogin,setShowLogin]=useState('-37px')
   const [isShow,setIsShow]=useState(false)

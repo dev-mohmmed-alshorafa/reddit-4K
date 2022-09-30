@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import { useState } from 'react';
-import { Store } from './Storage';
 import IconButton from '@mui/material/IconButton';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import NewStory from './NewStory';
+import NewStory from '../stories/NewStory';
+import { Store } from '../Storage';
+import NewPostForm from './NewPostForm';
 
 
 function AddStoryBtn() {
   const[checkStory,setCheckStory]=useState(false)
+  const[checkForm,setCheckForm]=useState(false)
   const {isUser}=useContext(Store)
 
   const useOutsideClick = (callback) => {
@@ -30,9 +32,18 @@ function AddStoryBtn() {
   };
   const handleClick=()=>{
     setCheckStory(true)
+    setCheckForm(false)
+
+  }
+  const showFprmPost=()=>{
+    setCheckForm(true)
+    setCheckStory(false)
+
   }
   const handleClickOutside = () => {
     setCheckStory(false)
+    setCheckForm(false)
+
   };
   const ref = useOutsideClick(handleClickOutside);
   return (
@@ -42,11 +53,12 @@ function AddStoryBtn() {
               
             <AddCircleOutlineOutlinedIcon/>
             <ul className='addDropDown'>
-              <li>add post</li>
+              <li onClick={showFprmPost}>add post</li>
               <li  type="button" onClick={handleClick} >add story</li>
             </ul>
             </IconButton>}
             {checkStory && <NewStory setCheckStory={setCheckStory}/>}
+            {checkForm && <NewPostForm setCheckForm={setCheckForm}/> }
       
     </div>
   )

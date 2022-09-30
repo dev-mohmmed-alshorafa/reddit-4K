@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Store } from './Storage';
+import { Store } from '../Storage';
 function SliderBtns() {
   const {moveSlider,setMoveSlider,stories}=useContext(Store)
   return (

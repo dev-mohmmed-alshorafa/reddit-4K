@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Story from './Story'
-import '../css/story.css'
-import { Store } from './Storage'
+import '../../css/story.css'
+import { Store } from '../Storage'
 import SliderStories from './SliderStories'
 
 
@@ -33,8 +33,6 @@ function Storeis() {
     setIsShowStory(false)
   };
   const ref = useOutsideClick(handleClickOutside);
-
-
 
 
   return (

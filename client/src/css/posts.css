@@ -1,0 +1,62 @@
+.postImg {
+  max-width: 500px;
+  max-height: 300px;
+  display: block;
+  margin: auto;
+}
+
+.post {
+  margin-top: 40px;
+  padding: 10px 0;
+  background-color: var(--post-color);
+  border-radius: 12px 12px 0 0;
+
+}
+
+.postContent {
+  padding: 10px;
+}
+
+.userPost {
+  padding: 0 5px;
+}
+
+.userPost img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.numCommentsAndLikesBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numCommentsAndLikesBox p {
+  display: flex;
+  align-items: center;
+}
+
+.numCommentsAndLikesBox svg {
+  color: #d93636;
+}
+
+.addLikeAndComment {
+  display: flex;
+  justify-content: space-between;
+  background: var(--main-color);
+}
+
+.addLikeAndComment button {
+  width: 50%;
+  border-right: 1px solid var(--negative-color);
+  border-left: 1px solid var(--negative-color);
+  border-radius: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addComment {
+  justify-content: flex-start !important;
+
+}

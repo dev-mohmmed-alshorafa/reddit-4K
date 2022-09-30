@@ -18,8 +18,6 @@ const signUp=(req,res)=>{
       .then(token=>{
         jwtFun(token.rows[0],res)
       })
-      // res.json({ss:'hi'})
-
     }
   })
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import { Store } from './Storage'
+import { Store } from '../Storage'
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import SignOut from './SignOut';

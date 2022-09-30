@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext } from 'react'
-import '../css/Header.css'
+import '../../css/Header.css'
 import HeaderIcons from './HeaderIcons'
 import SignsBox from './SignsBox'
-import { Store } from './Storage'
+import { Store } from '../Storage'
 import User from './User'
 
 

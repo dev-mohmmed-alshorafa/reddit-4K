@@ -9,6 +9,7 @@
   --main-color: #ffff;
   --sacndry-color: gray;
   --gray-color: rgb(238, 235, 235);
+  --post-color: #e1dcdc;
   --negative-color: black;
   --orange-color: #ff4a25;
 
@@ -21,4 +22,7 @@ body {
 main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
 }

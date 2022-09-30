@@ -171,3 +171,34 @@ label[for="chk"] {
   color: #fff;
   text-decoration: none;
 }
+
+.addPostBtn {
+  position: relative;
+}
+
+.formPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  z-index: 21;
+  background-color: var(--main-color);
+  padding: 10px 0;
+}
+
+.formPost textarea {
+  width: 90%;
+  border: none;
+  margin-bottom: 5px;
+  outline: none;
+
+}
+
+.formPost div {
+  display: flex;
+  justify-content: space-between;
+}
