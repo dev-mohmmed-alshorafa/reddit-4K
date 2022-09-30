@@ -9,11 +9,24 @@ const  connection=require('../config/connection');
       const query=`select posts.*,
       posts.img as imgPost,users.img,
       users.name,(select count(stars.*) from stars where stars.post_id=posts.id ) as likes
+      ,(select json_agg(json_build_object('id',users.id,'name',users.name,'image',users.img)) from stars left join users on users.id=stars.user_id where stars.post_id=posts.id group by stars.post_id ) as whoLike
        from posts left join users
-      on posts.user_id=users.id  ORDER BY posts.id DESC`
+      on posts.user_id=users.id ORDER BY posts.id DESC`
       return connection.query(query,[])
+    }
+    const isLike=(user_id,post_id)=>{
+      const query=`select id from stars where user_id=$1 and post_id=$2`
+      return connection.query(query,[user_id,post_id])
+    }
+    const putLike=(user_id,post_id)=>{
+      const query=`insert into stars(user_id,post_id) values($1,$2)`
+      return connection.query(query,[user_id,post_id])
+    }
+    const deleteLike=(user_id,post_id)=>{
+      const query=`delete from stars where user_id=$1 and post_id=$2 `
+      return connection.query(query,[user_id,post_id])
     }
  
  module.exports={
-  addNewPost,allPosts
+  addNewPost,allPosts,isLike,putLike,deleteLike
     }

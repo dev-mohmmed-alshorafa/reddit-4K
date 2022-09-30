@@ -7,7 +7,8 @@ const reduceSize=require('./tintify')
 const signOut=require('./signOut')
 const addNewPost=require('./addNewPost')
 const getAllPosts=require('./getAllPosts')
+const saveLike=require('./saveLike')
 module.exports={
   signUp,cloudUpload,saveStory,localUpload,getAllStories,reduceSize,signOut,addNewPost,
-  getAllPosts
+  getAllPosts,saveLike
 }

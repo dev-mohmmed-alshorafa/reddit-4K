@@ -27,6 +27,7 @@ useEffect(()=>{
   Axios('/api/get-all-posts').then(posts=>setPosts(posts.data))
 },[])
 
+console.log(posts);
 const signUpFun=(e)=>{
   e.preventDefault()
   const newData= new FormData()

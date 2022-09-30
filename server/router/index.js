@@ -1,5 +1,5 @@
 const {signUp,cloudUpload,saveStory,localUpload
-,getAllStories,reduceSize,signOut,addNewPost,getAllPosts
+,getAllStories,reduceSize,signOut,addNewPost,getAllPosts,saveLike
 }=require('../controllers')
 const router=require('express').Router()
 
@@ -8,7 +8,7 @@ router.post('/api/upload',localUpload().single('file'),reduceSize,cloudUpload,sa
 router.get('/api/stories',getAllStories)
 router.post('/api/add-new-post',localUpload().single('file'),reduceSize,cloudUpload,addNewPost)
 router.get('/api/get-all-posts',getAllPosts)
-
+router.post('/api/likes',saveLike)
 router.post('/signout',signOut)
 
 

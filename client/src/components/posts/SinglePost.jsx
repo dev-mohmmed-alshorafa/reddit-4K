@@ -4,22 +4,28 @@ import IconButton from '@mui/material/IconButton';
 import { useState } from 'react';
 import  Axios  from 'axios'
 import io from "socket.io-client";
+import { useContext } from 'react';
+import { Store } from '../Storage';
 const socket=io.connect('http://localhost:5000')
 
 
 function SinglePost({post}) {
-  const [isLike,setIsLike]=useState(false)
-
+  const {isUser}=useContext(Store)
+  const [isLike,setIsLike]=useState(post.wholike?post.wholike.some(e=>e.id===isUser.id):false)
+  const [likesNum,setLikesNum]=useState(post.likes)
 
 
 const handelLike=()=>{
-  setIsLike(!isLike)
-  socket.emit('like',{like:!isLike,id:post.id});
+  Axios.post('/api/likes',{
+    post_id:post.id
+  })
+  socket.emit('like',{like:!isLike,likesNum:isLike?+(likesNum)-1:+(likesNum)+1,id:post.id});
 
 } 
 socket.on('like', function(msg) {
   if(msg.id===post.id){
     setIsLike(msg.like)
+    setLikesNum(msg.likesNum)
   }
  });
 
@@ -38,7 +44,7 @@ socket.on('like', function(msg) {
       <p>0 comment's</p>
       <p>
         {
-          post.likes>0 && <><FavoriteOutlinedIcon />{ post.likes}</>
+          likesNum>0 && <><FavoriteOutlinedIcon />{ likesNum}</>
         }
       
       </p>
