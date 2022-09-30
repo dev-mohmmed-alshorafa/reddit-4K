@@ -3,21 +3,16 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import IconButton from '@mui/material/IconButton';
 import { useState } from 'react';
 import  Axios  from 'axios'
-import { io } from 'socket.io-client';
 
 
 function SinglePost({post}) {
   const [isLike,setIsLike]=useState(false)
 
 
-  const socket = io();
 const handelLike=()=>{
   setIsLike(!isLike)
-  socket.emit('chat message',{like:!isLike,id:post.id});
 } 
-  socket.on('chat message', function(msg) {
-  
-     });
+
 
   return (
     <div className='post'>

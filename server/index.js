@@ -1,5 +1,5 @@
-const server=require('./app')
+const app=require('./app')
 
 
 
-server.listen(5000)
+app.listen(5000)
