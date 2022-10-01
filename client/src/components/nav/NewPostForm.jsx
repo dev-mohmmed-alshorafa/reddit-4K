@@ -2,7 +2,7 @@ import  Axios  from 'axios'
 import React, { useContext, useState } from 'react'
 import { Store } from '../Storage'
 
-function NewPostForm({setCheckForm}) {
+function NewPostForm({setCheckForm,path}) {
   const [newPost,setNewPost]=useState('')
   const [imgPost,setImgPost]=useState('')
   const {posts,setPosts}=useContext(Store)
@@ -12,7 +12,7 @@ function NewPostForm({setCheckForm}) {
     const newData= new FormData()
     newData.append('file',imgPost)
     newData.append('data',JSON.stringify({post:newPost}))
-    Axios.post( "/api/add-new-post",newData).then(onePost=>setPosts([onePost.data,...posts]))
+    Axios.post( path,newData).then(onePost=>setPosts([onePost.data,...posts]))
     setCheckForm(false)
   }
   return (

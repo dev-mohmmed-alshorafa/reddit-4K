@@ -11,7 +11,7 @@ function AddNewPostForm() {
   return (
     <div>
  <li onClick={showFormPost}>add post</li>
-{checkForm && <NewPostForm/>}
+{checkForm && <NewPostForm setCheckForm={setCheckForm} path={"/api/add-new-post"}/>}
     </div>
   )
 }

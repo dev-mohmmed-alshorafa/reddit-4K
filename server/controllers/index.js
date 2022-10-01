@@ -8,7 +8,8 @@ const signOut=require('./signOut')
 const addNewPost=require('./addNewPost')
 const getAllPosts=require('./getAllPosts')
 const saveLike=require('./saveLike')
+const addNewComment=require('./addNewComment')
 module.exports={
   signUp,cloudUpload,saveStory,localUpload,getAllStories,reduceSize,signOut,addNewPost,
-  getAllPosts,saveLike
+  getAllPosts,saveLike,addNewComment
 }

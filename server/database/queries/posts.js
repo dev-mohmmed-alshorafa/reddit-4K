@@ -8,8 +8,10 @@ const  connection=require('../config/connection');
     const allPosts=()=>{
       const query=`select posts.*,
       posts.img as imgPost,users.img,
-      users.name,(select count(stars.*) from stars where stars.post_id=posts.id ) as likes
+      users.name,(select count(stars.*) from stars where stars.post_id=posts.id ) as likes,
+      (select count(comments.*) from comments where comments.post_id=posts.id ) as commentsNum
       ,(select json_agg(json_build_object('id',users.id,'name',users.name,'image',users.img)) from stars left join users on users.id=stars.user_id where stars.post_id=posts.id group by stars.post_id ) as whoLike
+       ,(select json_agg(json_build_object('user_id',users.id,'name',users.name,'userImg',users.img,'comment',comments.comment,'img',comments.img,'id',comments.id)) from comments left join users on users.id=comments.user_id where comments.post_id=posts.id group by comments.post_id ) as comments
        from posts left join users
       on posts.user_id=users.id ORDER BY posts.id DESC`
       return connection.query(query,[])

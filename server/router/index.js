@@ -1,5 +1,6 @@
 const {signUp,cloudUpload,saveStory,localUpload
-,getAllStories,reduceSize,signOut,addNewPost,getAllPosts,saveLike
+,getAllStories,reduceSize,signOut,addNewPost,getAllPosts,saveLike,
+addNewComment
 }=require('../controllers')
 const router=require('express').Router()
 
@@ -10,6 +11,7 @@ router.post('/api/add-new-post',localUpload().single('file'),reduceSize,cloudUpl
 router.get('/api/get-all-posts',getAllPosts)
 router.post('/api/likes',saveLike)
 router.post('/signout',signOut)
+router.post('/api/add-new-comment',localUpload().single('file'),reduceSize,cloudUpload,addNewComment)
 
 
 module.exports=router

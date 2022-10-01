@@ -30,6 +30,8 @@ io.on('connection', (socket) => {
   socket.on('like', (msg) => {
     io.emit('like', msg);
   });
+  
+
 });
 
 app.use(auth)

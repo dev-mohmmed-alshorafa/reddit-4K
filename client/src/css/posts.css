@@ -10,6 +10,7 @@
   padding: 10px 0;
   background-color: var(--post-color);
   border-radius: 12px 12px 0 0;
+  position: relative;
 
 }
 
@@ -49,8 +50,7 @@
 
 .addLikeAndComment button {
   width: 50%;
-  border-right: 1px solid var(--negative-color);
-  border-left: 1px solid var(--negative-color);
+
   border-radius: 0;
   display: flex;
   justify-content: flex-end;
@@ -59,4 +59,70 @@
 .addComment {
   justify-content: flex-start !important;
 
+}
+
+.addComment {
+  font-size: 1rem !important;
+  color: var(--negative-color) !important;
+}
+
+.addCommentForm {
+  width: 100%;
+  position: relative;
+}
+
+.addCommentForm button {
+  width: 20%;
+  padding: 5px;
+}
+
+.addCommentForm input {
+  width: 80%;
+  padding: 5px;
+
+}
+
+.addimgComment {
+  position: absolute;
+  right: 20%;
+  top: 3px;
+}
+
+.addimgComment input {
+  display: none;
+}
+
+.commentBox {
+  border-bottom: 1px solid var(--sacndry-color);
+}
+
+.ownerComment {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.ownerCommentBox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.contentComment {
+  padding: 5px 20px;
+}
+
+.contentComment img {
+  max-width: 200px;
+  border-radius: 12px;
+}
+
+.allComments {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  width: 90%;
+  background-color: var(--main-color);
 }

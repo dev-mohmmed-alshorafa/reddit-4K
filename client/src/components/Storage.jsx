@@ -24,10 +24,9 @@ useEffect(()=>{
   Axios('/api/user').then(data=>setIsUser(data.data))
   Axios('/api/stories').then(data=>{
     setStories(data.data)})
-  Axios('/api/get-all-posts').then(posts=>setPosts(posts.data))
+  Axios('/api/get-all-posts').then(posts=>{setPosts(posts.data)})
 },[])
 
-console.log(posts);
 const signUpFun=(e)=>{
   e.preventDefault()
   const newData= new FormData()
@@ -56,7 +55,7 @@ const signUpFun=(e)=>{
       <Store.Provider  value={{signUp,setSignUp,isUser,signUpFun,
         moveSlider,setMoveSlider
         ,stories,setStories,storyIndex,setStoryIndex,updateImgUser,setUpdateImgUser
-        ,posts,setPosts
+        ,posts,setPosts,
         }}>
       {props.children}
       </Store.Provider>
